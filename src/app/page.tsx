@@ -4,9 +4,9 @@ import Image from "next/image";
 import TimeLine from "./components/TimeLine/TimeLine";
 import WritingText from "./components/Text/WritingText";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
-import Link from "next/link";
 import { GithubLogo, LinkedinLogo, Mailbox } from "@phosphor-icons/react";
 import Particles from "./components/Overlays/Particles";
+import TrackedLink from "./components/Text/TrackedLink";
 
 export default function Home(): React.ReactElement {
 
@@ -27,9 +27,15 @@ export default function Home(): React.ReactElement {
         </div>
 
         <div className="flex gap-4 justify-center mb-15">
-          <Link href="https://linkedin.com/in/simon-picot"><LinkedinLogo size={24}/></Link>
-          <Link href="https://github.com/simonpct"><GithubLogo size={24}/></Link>
-          <Link href="mailto:contact@simonpct.fr"><Mailbox size={24}/></Link>
+          <TrackedLink href="https://linkedin.com/in/simon-picot" className="hover:opacity-80 transition-opacity">
+            <LinkedinLogo size={24}/>
+          </TrackedLink>
+          <TrackedLink href="https://github.com/simonpct" className="hover:opacity-80 transition-opacity">
+            <GithubLogo size={24}/>
+          </TrackedLink>
+          <TrackedLink href="mailto:contact@simonpct.fr" className="hover:opacity-80 transition-opacity">
+            <Mailbox size={24}/>
+          </TrackedLink>
         </div>
 
         <TimeLine />

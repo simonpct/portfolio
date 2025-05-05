@@ -7,6 +7,7 @@ import { timeLineData, TimeLineItemData } from '../../data';
 import clsx from 'clsx';
 import { TimeLineCorp } from './Content/TimeLineCorp';
 import TimeLineSkills from './Content/TimeLineSkills';
+import { usePostHog } from 'posthog-js/react';
 
 interface TimeLineItemProps {
   readonly index: number;
@@ -16,10 +17,19 @@ interface TimeLineItemProps {
 
 export const TimeLineItem: React.FC<TimeLineItemProps> = ({ index, item, blink }) => {
   const { currentIndex, setCurrentIndex } = useTimeLine();
+  const posthog = usePostHog();
   const isOpen = currentIndex === index;
   const isTitle = item.type === "title";
 
   const toggleOpen = (): void => {
+    // Track the click event with PostHog
+    posthog.capture("timeline_item_clicked", {
+      item_title: item.title,
+      item_index: index,
+      item_type: item.type || "default",
+      action: isOpen ? "close" : "open"
+    });
+    
     if (isOpen) {
       setCurrentIndex(-1);
     } else {
