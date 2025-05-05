@@ -5,7 +5,8 @@ import { TimeLineDot } from './TimeLineDot';
 import { useTimeLine } from './TimeLineContext';
 import { timeLineData, TimeLineItemData } from '../../data';
 import clsx from 'clsx';
-import { TimeLineCorp } from './TimeLineCorp';
+import { TimeLineCorp } from './Content/TimeLineCorp';
+import TimeLineSkills from './Content/TimeLineSkills';
 
 interface TimeLineItemProps {
   readonly index: number;
@@ -57,6 +58,9 @@ export const TimeLineItem: React.FC<TimeLineItemProps> = ({ index, item, blink }
               )}
               {content.type === 'react' && (
                 content.content()
+              )}
+              {content.type === 'skills' && (
+                <TimeLineSkills skills={content.skills} content={content.content} />
               )}
             </div>
           ))}

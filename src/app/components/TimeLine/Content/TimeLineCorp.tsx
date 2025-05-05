@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TimeLineContentCorp } from "../../data";
+import { TimeLineContentCorp } from "../../../data";
 import { Calendar } from "@phosphor-icons/react";
 
 export const TimeLineCorp: React.FC<{ corp: TimeLineContentCorp; }> = ({ corp }) => {

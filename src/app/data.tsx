@@ -1,7 +1,7 @@
 import { ArrowFatDown, ArrowFatUp } from "@phosphor-icons/react";
 import { KBD } from "./components/Text/KBD";
 
-export type TimeLineContent = TimeLineContentText | TimeLineContentCorp | TimeLineContentReact;
+export type TimeLineContent = TimeLineContentText | TimeLineContentCorp | TimeLineContentReact | TimeLineContentSkills;
 
 export type TimeLineContentText = {
   readonly type: 'text';
@@ -20,6 +20,18 @@ export type TimeLineContentCorp = {
   readonly content: string;
   readonly objectifs: readonly string[];
   readonly date: string;
+}
+
+export type TimeLineContentSkills = {
+  readonly type: 'skills';
+  readonly content: string;
+  readonly skills: readonly TimeLineSkill[];
+}
+
+export type TimeLineSkill = {
+  readonly name: string;
+  readonly icon: string;
+  readonly level: number;
 }
 
 export interface TimeLineItemData {
@@ -104,7 +116,42 @@ export const timeLineData: readonly TimeLineItemData[] = [
     ]
   },
   {
+    title: 'Mes compétences',
+    content: [
+      {
+        type: 'skills',
+        content: 'Techniques',
+        skills: [
+          { name: 'React', icon: 'react', level: 4 },
+          { name: 'Next.js', icon: 'next.js', level: 4 },
+          { name: 'TypeScript', icon: 'typescript', level: 4 },
+          { name: 'Node.js', icon: 'node.js', level: 4 },
+          { name: 'Git', icon: 'git', level: 4 },
+        ]
+      },
+      {
+        type: 'skills',
+        content: 'Bureautique',
+        skills: [
+          { name: 'Figma', icon: 'figma', level: 4 },
+          { name: 'Trello', icon: 'trello', level: 4 },
+          { name: 'Notion', icon: 'notion', level: 4 }
+        ]
+      }
+    ]
+  },
+  {
     title: 'Et après ?',
-    type: 'title'
+    type: 'title',
+    content: [
+      {
+        type: 'text',
+        content: 'On se voit peut-être ? Contactez-moi par mail ou sur LinkedIn !'
+      },
+      {
+        type: 'text',
+        content: 'Je serais ravi de travailler avec vous !'
+      }
+    ]
   }
 ];
