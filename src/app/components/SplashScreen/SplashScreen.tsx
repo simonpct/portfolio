@@ -9,7 +9,7 @@ export default function SplashScreen() {
   const [isSplashScreenOpen, setIsSplashScreenOpen] = useState(true);
 
   const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.key === "Escape" || event.key === " ") {
       setIsSplashScreenOpen(false);
     }
   };
@@ -33,9 +33,6 @@ export default function SplashScreen() {
       "flex items-center justify-center max-h-screen"
     )}>
       <Map />
-      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 cursor-pointer" onClick={() => setIsSplashScreenOpen(false)}>
-        Ne plus voir
-      </span>
     </div>
   );
 }
