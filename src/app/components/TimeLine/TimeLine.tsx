@@ -17,7 +17,7 @@ export default function TimeLine(): React.ReactElement {
   }, []);
 
   return (
-    <div className="relative ml-2 md:ml-12 xl:ml-24 backdrop-blur-md">
+    <div className="relative ml-2 md:ml-24 xl:ml-[400px] backdrop-blur-md">
       <div className="relative z-10">
         <TimeLineProvider>
           {timeLineData.map((item, index) => (

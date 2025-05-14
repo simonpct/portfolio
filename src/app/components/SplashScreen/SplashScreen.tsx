@@ -31,10 +31,10 @@ export default function SplashScreen(): React.ReactElement {
     const timer = setTimeout(() => {
       posthog.capture("splash_screen_closed", {
         method: "auto_timeout",
-        timeout_duration: 4000
+        timeout_duration: 2200
       });
       setIsSplashScreenOpen(false);
-    }, 4000);
+    }, 2200);
     
     return () => clearTimeout(timer);
   }, [posthog]);

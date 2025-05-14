@@ -61,11 +61,15 @@ export const timeLineData: readonly TimeLineItemData[] = [
     content: [
       {
         type: 'text',
-        content: '18 ans et toutes mes dents, je suis passionné par les mobilités publiques et les transports en commun.'
+        content: 'Développeur de 18 ans, curieux et créatif, je suis passionné par l’impact du numérique dans notre quotidien.'
       },
       {
         type: 'text',
-        content: 'Souriant, dynamique et créatif, je déborde d’envie de rendre les transports plus intelligents, accessibles et attractifs.'
+        content: 'J’aime concevoir des outils utiles, esthétiques et accessibles, que ce soit pour améliorer les mobilités, l’expérience utilisateur ou l’organisation des équipes.'
+      },
+      {
+        type: 'text',
+        content: 'Je suis toujours en quête de nouveaux défis techniques, quel que soit le secteur d’activité.'
       }
     ]
   },
@@ -96,9 +100,9 @@ export const timeLineData: readonly TimeLineItemData[] = [
         logo: 'thegiftsclub.png',
         content: 'Développeur web (contrat d\'alternance)',
         objectifs: [
-          'Concevoir et développer des applications web modernes et performantes',
-          'Maitriser les dernières technologies web et les meilleures pratiques de développement',
-          'Collaborer en équipe pour créer des solutions innovantes'
+          'Développement et maintenance d’interfaces web réactives et performantes',
+          'Participation à la réflexion produit et à l’amélioration continue',
+          'Collaboration en équipe agile avec designers et responsables marketing'
         ]
       },
       {
@@ -108,9 +112,10 @@ export const timeLineData: readonly TimeLineItemData[] = [
         logo: 'stan.png',
         content: 'Stage volontaire (hors cadre scolaire)',
         objectifs: [
-          'Concevoir et développer des applications web modernes et performantes',
-          'Maitriser les dernières technologies web et les meilleures pratiques de développement',
-          'Collaborer en équipe pour créer des solutions innovantes'
+          'Observer et comprendre les enjeux opérationnels liés à la régulation en temps réel des réseaux de transport',
+          'Découvrir les outils internes utilisés pour superviser et adapter l’offre en fonction des aléas',
+          'Analyser les canaux et méthodes de communication vers les voyageurs (information perturbation, temps réel, etc.)',
+          'Approfondir ma culture des systèmes d’aide à l’exploitation et à l’information voyageurs (SAEIV)'
         ]
       }
     ]
@@ -146,11 +151,11 @@ export const timeLineData: readonly TimeLineItemData[] = [
     content: [
       {
         type: 'text',
-        content: 'On se voit peut-être ? Contactez-moi par mail ou sur LinkedIn !'
+        content: 'Toujours curieux et motivé, je suis ouvert à de nouvelles opportunités dans le développement web, la tech, ou des secteurs innovants.'
       },
       {
         type: 'text',
-        content: 'Je serais ravi de travailler avec vous !'
+        content: 'Envie d’échanger ? Écrivez-moi par mail ou sur LinkedIn. À bientôt peut-être !'
       }
     ]
   }
