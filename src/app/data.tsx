@@ -1,7 +1,12 @@
 import { ArrowFatDown, ArrowFatUp } from "@phosphor-icons/react";
 import { KBD } from "./components/Text/KBD";
 
-export type TimeLineContent = TimeLineContentText | TimeLineContentCorp | TimeLineContentReact | TimeLineContentSkills;
+export type TimeLineContent =
+  TimeLineContentText
+  | TimeLineContentCorp
+  | TimeLineContentReact
+  | TimeLineContentSkills
+  | TimeLineContentProjects;
 
 export type TimeLineContentText = {
   readonly type: 'text';
@@ -15,6 +20,19 @@ export type TimeLineContentReact = {
 
 export type TimeLineContentCorp = {
   readonly type: 'corp';
+  readonly title: string;
+  readonly logo: string;
+  readonly content: string;
+  readonly objectifs: readonly string[];
+  readonly date: string;
+}
+
+export type TimeLineContentProjects = {
+  readonly type: 'projects';
+  readonly projects: readonly TimeLineProject[];
+}
+
+export type TimeLineProject = {
   readonly title: string;
   readonly logo: string;
   readonly content: string;
@@ -113,9 +131,43 @@ export const timeLineData: readonly TimeLineItemData[] = [
         content: 'Stage volontaire (hors cadre scolaire)',
         objectifs: [
           'Observer et comprendre les enjeux opérationnels liés à la régulation en temps réel des réseaux de transport',
-          'Découvrir les outils internes utilisés pour superviser et adapter l’offre en fonction des aléas',
+          'Découvrir les outils internes utilisés pour superviser et adapter l\'offre en fonction des aléas',
           'Analyser les canaux et méthodes de communication vers les voyageurs (information perturbation, temps réel, etc.)',
-          'Approfondir ma culture des systèmes d’aide à l’exploitation et à l’information voyageurs (SAEIV)'
+          'Approfondir ma culture des systèmes d\'aide à l\'exploitation et à l\'information voyageurs (SAEIV)'
+        ]
+      }
+    ]
+  },
+  {
+    title: 'Mes projets',
+    content: [
+      {
+        type: 'projects',
+        projects: [
+          {
+            title: 'Cartographie souterraine - Projet OpenStreetMap',
+            date: 'mai 2025 (en cours)',
+            logo: 'osm.png',
+            content: 'Projet personnel',
+            objectifs: [
+              'Cartographie souterraine des stations de métro et des gares avec OpenStreetMap',
+              'Utilisation de la technologie LiDAR pour la capture précise des espaces souterrains',
+              'Création de modèles 3D navigables des infrastructures souterraines',
+              'Contribution à l\'amélioration de l\'accessibilité des données cartographiques pour les personnes à mobilité réduite'
+            ]
+          },
+          {
+            title: 'Application mobilité Nancy',
+            date: 'avril-mai 2025 (en cours)',
+            logo: 'nancy.png',
+            content: 'Projet de développement',
+            objectifs: [
+              'Développement d\'une application moderne pour remplacer celle des horaires en temps réel des mobilités de Nancy',
+              'Intégration des API de transport public pour fournir des informations précises et en temps réel',
+              'Conception d\'une interface utilisateur intuitive et accessible pour tous les usagers',
+              'Implémentation de fonctionnalités avancées comme les alertes personnalisées et les itinéraires alternatifs'
+            ]
+          }
         ]
       }
     ]

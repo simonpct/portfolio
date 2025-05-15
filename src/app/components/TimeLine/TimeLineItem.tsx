@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import { TimeLineCorp } from './Content/TimeLineCorp';
 import TimeLineSkills from './Content/TimeLineSkills';
 import { usePostHog } from 'posthog-js/react';
+import { TimeLineProjects } from './Content/TimeLineProjects';
 
 interface TimeLineItemProps {
   readonly index: number;
@@ -56,7 +57,7 @@ export const TimeLineItem: React.FC<TimeLineItemProps> = ({ index, item, blink }
         </div>
         
         {<div className={clsx("mt-2 mb-4 text-sm rounded-md overflow-hidden transition-all duration-300 ease-in-out",
-          isOpen ? 'max-h-[500px] opacity-100 py-3' : 'max-h-0 opacity-0 p-0',
+          isOpen ? 'opacity-100 py-3' : 'max-h-0 opacity-0 p-0',
           'flex flex-col gap-2')}>
           {item.content?.map((content, index) => (
             <div key={index}>
@@ -71,6 +72,9 @@ export const TimeLineItem: React.FC<TimeLineItemProps> = ({ index, item, blink }
               )}
               {content.type === 'skills' && (
                 <TimeLineSkills skills={content.skills} content={content.content} />
+              )}
+              {content.type === 'projects' && (
+                <TimeLineProjects projects={content.projects} />
               )}
             </div>
           ))}
